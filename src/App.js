@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Layout/Navbar';
 import Index from './components/Layout/Index';
 import axios from 'axios';
+import Lyrics from './components/tracks/Lyrics';
 import { connect } from 'react-redux';
 
 import './App.css';
 
-const apikey = "b98a9af6b1d19496323f129a327b4f69";
+export const apikey = "b98a9af6b1d19496323f129a327b4f69";
 class App extends Component {
   componentDidMount(){
     axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${apikey /*process.env.REACT_APP_MM_KEY*/}`)
@@ -26,6 +27,7 @@ class App extends Component {
           <div className="container">
             <Switch>
               <Route exact path="/" component = {Index} />
+              <Route exact path="/lyrics/track/:id" component = {Lyrics} />
             </Switch>
           </div>
         </React.Fragment>

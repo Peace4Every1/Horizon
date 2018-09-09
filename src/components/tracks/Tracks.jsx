@@ -6,7 +6,7 @@ import Track from './Track';
 
 class Tracks extends Component {
   render() {
-    console.log(this.props.storeSt);
+    // console.log(this.props.storeSt);
    
     return (
       <div>

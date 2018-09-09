@@ -22,7 +22,7 @@ function reducer(state = initState, action){
 }
 
 const store = createStore(reducer);
-console.log(store);
+// console.log(store);
 ReactDOM.render(
     <Provider store = {store}>
         <App />
