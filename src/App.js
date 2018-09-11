@@ -17,14 +17,16 @@ class App extends Component {
       this.props.onGet(res);
       // console.log(res.data.message.body.track_list);
     })
-    .catch(err => console.log(err))
+    // .catch(err => console.log(err))
   }
   render() {
+    // console.log(this.props.state);
     return (
       <Router>
         <React.Fragment>
           <Navbar />
           <div className="container">
+            {/* <h2 style={{textAlign: "center"}}>{this.props.state.heading}</h2> */}
             <Switch>
               <Route exact path="/" component = {Index} />
               <Route exact path="/lyrics/track/:id" component = {Lyrics} />

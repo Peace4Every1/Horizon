@@ -15,8 +15,21 @@ const initState = {
 function reducer(state = initState, action){
     switch(action.type){
         case "GET_TOP": 
-            return {track_list: [...action.track_list],
-                    heading: 'Top 10 Tracks'};
+            return {
+                    track_list: [...action.track_list],
+                    heading: 'Top 10 Tracks'
+                };
+        case "SEARCH_TRACKS":
+            return {
+                ...state,
+                track_list: action.payload,
+                heading: "Search Results"
+            };
+        case "SET_NAME":
+            return {
+                ...state,
+                name: action.name
+            }
         default: return state
     }
 }
